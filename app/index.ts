@@ -4,6 +4,7 @@ import db from './models';
 import bodyParser from 'body-parser';
 
 import authenticationRoutes from './routes/authentication.routes';
+import docsRoutes from './routes/docs.routes';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 authenticationRoutes(app);
+docsRoutes(app);
 
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
