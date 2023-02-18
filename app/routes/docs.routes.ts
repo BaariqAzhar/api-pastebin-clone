@@ -15,6 +15,7 @@ const docsRoutes = (app: Express) => {
     router.post('/readAll', authenticateUserHelper, readAllController);
     router.get('/read/:doc_uuid', readController);
     router.post('/delete', authenticateUserHelper, deleteController);
+    router.post('/update', authenticateUserHelper);
 
     app.use('/docs', router);
 };
