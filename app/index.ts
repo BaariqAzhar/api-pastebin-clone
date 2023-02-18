@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import db from './models';
 import bodyParser from 'body-parser';
 
-import registerRoutes from './routes/register.routes';
+import authenticationRoutes from './routes/authentication.routes';
 
 dotenv.config();
 
@@ -19,7 +19,7 @@ app.get('/', (req: Request, res: Response) => {
     res.send('Express + TypeScript Server, yeayy het');
 });
 
-registerRoutes(app);
+authenticationRoutes(app);
 
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
