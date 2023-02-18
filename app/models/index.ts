@@ -1,6 +1,8 @@
 import { Sequelize } from 'sequelize-typescript';
 import dbConfig from '../config/db.config';
+
 import usersModel from './users.model';
+import docsModel from './docs.modal';
 
 const otherConfig = {
     host: dbConfig.HOST,
@@ -22,5 +24,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.users = usersModel(sequelize, Sequelize);
+db.docs = docsModel(sequelize, Sequelize);
 
 export default db;
