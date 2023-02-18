@@ -11,6 +11,12 @@ const docsModel = (sequelize: Sequelize, Sequelize: any) => {
         content: {
             type: DataType.TEXT('long'),
         },
+        public_show: {
+            type: DataType.BOOLEAN,
+        },
+        public_daterange: {
+            type: DataType.STRING,
+        },
     });
 
     return Docs;
