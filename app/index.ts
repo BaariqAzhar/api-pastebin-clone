@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import db from './models';
+import bodyParser from 'body-parser';
 
 import registerRoutes from './routes/register.routes';
 
@@ -8,6 +9,8 @@ dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
+
+app.use(bodyParser.json());
 
 // Sync database
 db.sequelize.sync();

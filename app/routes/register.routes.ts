@@ -1,7 +1,7 @@
-import express from 'express';
+import express, { Express } from 'express';
 import registerController from '../controllers/register.controller';
 
-const registerRoutes = (app: any) => {
+const registerRoutes = (app: Express) => {
     let router = express.Router();
 
     router.post('/', registerController);
