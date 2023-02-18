@@ -1,8 +1,10 @@
 import express, { Express, Request, Response } from 'express';
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import db from './models';
 
-// dotenv.config();
+import registerRoutes from './routes/register.routes';
+
+dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
@@ -13,6 +15,8 @@ db.sequelize.sync();
 app.get('/', (req: Request, res: Response) => {
     res.send('Express + TypeScript Server, yeayy het');
 });
+
+registerRoutes(app);
 
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
