@@ -4,11 +4,7 @@ import db from '../models';
 
 const Docs = db.docs;
 
-// todo
-// O validate doc_uuid is required
-// O validate user is same with doc user
-// O delete doc
-const deleteController = async (req: Request, res: Response) => {
+const updateController = async (req: Request, res: Response) => {
     const reqBody = req.body;
 
     if (!reqBody.doc_uuid) {
@@ -27,19 +23,27 @@ const deleteController = async (req: Request, res: Response) => {
             return res.status(400).json({ error: 'User is not same with user_uuid from doc table' });
         }
 
-        Docs.destroy({
-            where: {
+        Docs.update(
+            {
                 uuid: reqBody.doc_uuid,
+                content: reqBody.doc_content || undefined,
+                public_show: (Boolean(reqBody.doc_public_show) ? true : false) || undefined,
+                public_daterange: reqBody.doc_public_daterange || undefined,
             },
-        })
+            {
+                where: {
+                    uuid: reqBody.doc_uuid,
+                },
+            }
+        )
             .then((doc: any) => {
                 return res.status(200).json({
-                    message: 'delete suscessfully',
+                    message: 'update suscessfully',
                 });
             })
             .catch((err: any) => {
                 res.status(500).send({
-                    message: 'Some error occurred while deleting doc',
+                    message: 'Some error occurred while updating doc',
                 });
             });
     } catch (error: any) {
@@ -49,4 +53,4 @@ const deleteController = async (req: Request, res: Response) => {
     }
 };
 
-export default deleteController;
+export default updateController;
