@@ -3,6 +3,6 @@ FROM node:16
 WORKDIR /pastebin-nodejs
 COPY package.json .
 RUN npm install
-COPY . .
 RUN npm run build
+COPY . .
 CMD npm start
