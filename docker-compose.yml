@@ -27,6 +27,7 @@ services:
       - DB_PASSWORD=$MYSQLDB_ROOT_PASSWORD
       - DB_DB=$MYSQLDB_DATABASE
       - DB_PORT=$MYSQLDB_DOCKER_PORT
+      - PORT=$NODE_DOCKER_PORT
     stdin_open: true
     tty: true
 
