@@ -39,7 +39,7 @@ cd (folder name)
 
 Run NodeJs project + MariaDB using Docker (quite take time in first time)
 ```bash
-docker-compose up
+docker compose up
 ```
 
 Finally your Pastebin clone has been launch 🚀🚀🚀
