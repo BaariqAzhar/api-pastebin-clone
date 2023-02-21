@@ -15,7 +15,7 @@
 
 
 ## OpenAPI
-you could try the Deployed Restful API here (in progress)
+you could try the Deployed Restful API here https://breezy-crews-report-18-140-65-151.loca.lt/
 * please inform me, if the server got down, chat me at [linkedin](https://www.linkedin.com/in/baariq-azhar/)  
 
 
