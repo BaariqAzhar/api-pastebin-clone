@@ -1,4 +1,4 @@
-# BE Etfax Test: Pastebin Clone API 📝
+# BE Pastebin Clone API 📝
 
 #### Backend application to produce RESTful API for Pastebin like.
 
@@ -157,8 +157,8 @@ docker-compose down
 
 ## Architecture
 
-![alt text](https://github.com/BaariqAzhar/be-etfax-test/blob/master/documentation/img/AWS%20EC2.png?raw=true)
 sc: documentation/img/AWS EC2.png
+![alt text](https://github.com/BaariqAzhar/be-etfax-test/blob/master/documentation/img/AWS%20EC2.png?raw=true)
 
 
 
